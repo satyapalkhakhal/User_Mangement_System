@@ -1,11 +1,10 @@
-// components/UserForm.jsx
 import { useState } from 'react';
 
 function UserForm({ user, onSubmit, onCancel }) {
   const [formData, setFormData] = useState({
     name: user?.name || '',
     email: user?.email || '',
-    role: user?.role || '',
+    role: user?.role || 'USER',
     phone: user?.phone || '' 
   });
 
