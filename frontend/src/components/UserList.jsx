@@ -40,7 +40,7 @@ const UserList = ({ users, onEdit, onDelete }) => {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center">
                     <div className="flex-shrink-0 h-10 w-10">
-                      <img className="h-10 w-10 rounded-full" src={user.avatar} alt="" />
+                      <img className="h-10 w-10 rounded-full" src={user.photo} alt="" />
                     </div>
                     <div className="ml-4">
                       <div className="flex items-center">
@@ -50,7 +50,7 @@ const UserList = ({ users, onEdit, onDelete }) => {
                         </span>
                       </div>
                       <p className="text-sm text-gray-500">{user.email}</p>
-                      <p className="text-xs text-gray-400 mt-1">Joined on {user.joinDate}</p>
+                      <p className="text-xs text-gray-400 mt-1">Joined on {user.joined_at}</p>
                     </div>
                   </div>
                   <div className="ml-2 flex-shrink-0 flex">
