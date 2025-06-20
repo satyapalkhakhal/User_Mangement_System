@@ -17,9 +17,11 @@ This is a full-stack CRUD (Create, Read, Update, Delete) application built using
 ---
 
 ## 🚀 Steps to Run the Project
+Download the project and run the following commands in your terminal.
+configure the database credentials in the backend/config/database.php file
+cd backend
+php config/db_migrate.php - for creating the database tables
 
-### 1. Clone the Repository
-
-```bash
-git clone <your-repo-url>
-cd <project-folder>
+cd frontend
+npm install - for installing the dependencies
+npm run dev - for starting the development server
