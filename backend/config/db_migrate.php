@@ -26,18 +26,6 @@ try {
     $dsn = "mysql:host={$dbConfig['host']};dbname={$dbConfig['name']};charset={$dbConfig['charset']}";
     $pdo = new PDO($dsn, $dbConfig['user'], $dbConfig['pass']);
     
-    // Create admin_user table
-    $pdo->exec("
-        CREATE TABLE IF NOT EXISTS `admin_user` (
-            `id` INT AUTO_INCREMENT PRIMARY KEY,
-            `name` VARCHAR(255) NOT NULL,
-            `email` VARCHAR(255) NOT NULL UNIQUE,
-            `phone` VARCHAR(20) NOT NULL,
-            `password` VARCHAR(255) NOT NULL,
-            `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-    ");
-    echo "Table 'admin_user' created successfully.\n";
     
     // Create user_data table
     $pdo->exec("

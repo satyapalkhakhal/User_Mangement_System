@@ -1,26 +1,12 @@
 <?php
-require_once __DIR__ . '/../controllers/AuthController.php';
 require_once __DIR__ . '/../controllers/UserController.php';
 function handleRoutes($pdo, $request) {
-    $authController = new AuthController($pdo);
     $userController = new UserController($pdo);
 
     // Normalize the path by removing .php and base directory
     $normalizedPath = str_replace('/UserMangement/backend/public', '', $request['path']);
     $normalizedPath = str_replace('.php', '', $normalizedPath);
     $normalizedPath = rtrim($normalizedPath, '/');
-
-    switch ($request['method']) {
-        case 'POST':
-            if ($normalizedPath === '/signup') {
-                echo $authController->signup($request['body']);
-                exit;
-            } elseif ($normalizedPath === '/login') {
-                echo $authController->login($request['body']);
-                exit;
-            }
-            break;
-    }
 
     // Routes that require authentication
     switch ($request['method']) {

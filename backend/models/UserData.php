@@ -31,14 +31,13 @@ class UserData {
     }
 
     public function update($id, $data) {
-        $stmt = $this->pdo->prepare("UPDATE user_data SET name = ?, email = ?, phone = ?, role = ?, address = ?, photo = ? WHERE id = ?");
+        $stmt = $this->pdo->prepare("UPDATE user_data SET name = ?, email = ?, phone = ?, role = ?, address = ? WHERE id = ?");
         return $stmt->execute([
             $data['name'],
             $data['email'],
             $data['phone'],
             $data['role'],
             $data['address'] ?? null,
-            $data['photo'] ?? null,
             $id
         ]);
     }
